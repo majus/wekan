@@ -1103,3 +1103,38 @@ Migrations.add('assign-boardwise-card-numbers', () => {
     });
   })
 });
+
+Migrations.add(
+  'adapt-attachments-to-ostrio-files-api-using-meta-and-drp-cfs-leacy',
+  () => {
+    Attachments.find().forEach(file => {
+      Attachments.update(
+        file._id,
+        {
+          $set: {
+            'meta.boardId': file.boardId,
+            'meta.cardId': file.cardId,
+            'meta.listId': file.listId,
+            'meta.swimlaneId': file.swimlaneId,
+          },
+        },
+        noValidate,
+      );
+    });
+    Attachments.update(
+      {},
+      {
+        $unset: {
+          original: '', // cfs:* legacy
+          copies: '', // cfs:* legacy
+          failures: '', // cfs:* legacy
+          boardId: '',
+          cardId: '',
+          listId: '',
+          swimlaneId: '',
+        },
+      },
+      noValidateMulti,
+    );
+  },
+);
