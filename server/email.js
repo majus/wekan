@@ -4,15 +4,18 @@ import { Log } from 'meteor/logging';
 import nodemailer from 'nodemailer';
 import mailgun from 'nodemailer-mailgun-transport';
 
-const { service, domain, apiKey } = Meteor.settings.email ?? {};
+const { service, host, domain, apiKey } = Meteor.settings.email ?? {};
 
 if (service === 'mailgun') {
-  const transport = nodemailer.createTransport(mailgun({
-    auth: {
-      domain,
-      api_key: apiKey,
-    },
-  }));
+  const transport = nodemailer.createTransport(
+    mailgun({
+      auth: {
+        domain,
+        api_key: apiKey,
+      },
+      host,
+    }),
+  );
   const sendMailSync = Meteor.wrapAsync(transport.sendMail, transport);
   Email.hookSend(function(options) {
     const response = sendMailSync(options);
