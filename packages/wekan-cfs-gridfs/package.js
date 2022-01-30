@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Npm.depends({
-  mongodb: '2.2.9',
+  'mongodb': '3.7.3',
   'gridfs-stream': '1.1.1'
   //'gridfs-locking-stream': '0.0.3'
 });
