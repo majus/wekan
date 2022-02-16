@@ -1,3 +1,4 @@
+import { TAPi18n } from '/i18n';
 import Cards from '../../models/cards';
 import SessionData from '../../models/usersessiondata';
 import {QueryDebug} from "../../config/query-classes";

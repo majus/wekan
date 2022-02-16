@@ -1,4 +1,5 @@
-import { TAPi18n } from '../../i18n/i18n';
+import moment from 'moment';
+import { TAPi18n } from '/i18n';
 
 Blaze.registerHelper('currentBoard', () => {
   const ret = Utils.getCurrentBoard();
@@ -33,6 +34,14 @@ Blaze.registerHelper('isMiniScreenOrShowDesktopDragHandles', () =>
   Utils.isMiniScreenOrShowDesktopDragHandles(),
 );
 
-Blaze.registerHelper('_', str => {
-  return TAPi18n.__(str)
+Blaze.registerHelper('moment', (...args) => {
+  args.pop(); // hash
+  const [date, format] = args;
+  return moment(date).format(format);
+});
+
+Blaze.registerHelper('_', (...args) => {
+  const { hash } = args.pop();
+  const [key] = args.splice(0, 1);
+  return TAPi18n.__(key, { ...hash, sprintf: args });
 });

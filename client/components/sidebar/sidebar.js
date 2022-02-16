@@ -1,3 +1,5 @@
+import { TAPi18n } from '/i18n';
+
 Sidebar = null;
 
 const defaultView = 'home';

@@ -1,3 +1,4 @@
+import { TAPi18n } from '/i18n';
 import {
   ALLOWED_BOARD_COLORS,
   ALLOWED_COLORS,
