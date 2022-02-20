@@ -1,12 +1,12 @@
-FROM quay.io/wekan/ubuntu:groovy-20210115
+FROM ubuntu:rolling
 LABEL maintainer="sgr"
 
-ENV BUILD_DEPS="gnupg gosu libarchive-tools wget curl bzip2 g++ build-essential python git ca-certificates iproute2"
+ENV BUILD_DEPS="gnupg gosu libarchive-tools wget curl bzip2 g++ build-essential python3 git ca-certificates iproute2"
 ENV DEBIAN_FRONTEND=noninteractive
 
 ENV \
     DEBUG=false \
-    NODE_VERSION=v14.19.0 \
+    NODE_VERSION=v12.22.10 \
     METEOR_RELEASE=1.10.2 \
     USE_EDGE=false \
     METEOR_EDGE=1.5-beta.17 \

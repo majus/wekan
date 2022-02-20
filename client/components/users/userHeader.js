@@ -1,3 +1,5 @@
+import { TAPi18n } from '/i18n';
+
 Template.headerUserBar.events({
   'click .js-open-header-member-menu': Popup.open('memberMenu'),
   'click .js-change-avatar': Popup.open('changeAvatar'),

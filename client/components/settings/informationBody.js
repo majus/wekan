@@ -1,3 +1,5 @@
+import { TAPi18n } from '/i18n';
+
 BlazeComponent.extendComponent({
   onCreated() {
     this.info = new ReactiveVar({});

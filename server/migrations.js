@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { TAPi18n } from '/i18n';
 import AccountSettings from '../models/accountSettings';
 import TableVisibilityModeSettings from '../models/tableVisibilityModeSettings';
 import Actions from '../models/actions';
@@ -81,6 +82,7 @@ Migrations.add('lowercase-board-permission', () => {
   });
 });
 
+/*
 // Security migration: see https://github.com/wekan/wekan/issues/99
 Migrations.add('change-attachments-type-for-non-images', () => {
   const newTypeForNonImage = 'application/octet-stream';
@@ -109,6 +111,8 @@ Migrations.add('card-covers', () => {
   });
   Attachments.update({}, { $unset: { cover: '' } }, noValidateMulti);
 });
+
+*/
 
 Migrations.add('use-css-class-for-boards-colors', () => {
   const associationTable = {
@@ -1123,3 +1127,4 @@ Migrations.add('add-card-details-show-lists', () => {
     noValidateMulti,
   );
 });
+

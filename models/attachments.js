@@ -67,6 +67,8 @@ Attachments = new FilesCollection({
   },
 });
 
+
+
 if (Meteor.isServer) {
   Attachments.allow({
     insert(userId, fileObj) {
@@ -82,7 +84,7 @@ if (Meteor.isServer) {
   });
 
   Meteor.startup(() => {
-    Attachments.collection._ensureIndex({ cardId: 1 });
+    Attachments.collection.createIndex({ cardId: 1 });
   });
 }
 

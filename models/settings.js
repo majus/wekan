@@ -1,3 +1,4 @@
+import { TAPi18n } from '/i18n';
 //var nodemailer = require('nodemailer');
 
 // Sandstorm context is detected using the METEOR_SETTINGS environment variable
@@ -146,7 +147,7 @@ Settings.allow({
 
 if (Meteor.isServer) {
   Meteor.startup(() => {
-    Settings._collection._ensureIndex({ modifiedAt: -1 });
+    Settings._collection.createIndex({ modifiedAt: -1 });
     const setting = Settings.findOne({});
     if (!setting) {
       const now = new Date();

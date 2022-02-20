@@ -1,5 +1,57 @@
 [Mac ChangeLog](https://github.com/wekan/wekan/wiki/Mac)
 
+# Upcoming WeKan ® release
+
+This release fixes the following bugs:
+
+- [Global search: Card Details popup opens now in normal view even if maximized card is configured](https://github.com/wekan/wekan/pull/4352).
+  Thanks to mfilser.
+
+Thanks to above GitHub users for their contributions and translators for their translations.
+
+# v6.05 2022-02-07 WeKan ® release
+
+This release adds the following updates:
+
+- [Update release scripts to merge latest changes](https://github.com/wekan/wekan/commit/ad35e7b7bd1d6d7568b3a5d692941e03e4623c1a).
+  Thanks to xet7.
+
+and fixes the following bugs:
+
+- [Fix copy move card](https://github.com/wekan/wekan/pull/4345).
+  Thanks to mfilser.
+
+Thanks to above GitHub users for their contributions and translators for their translations.
+
+# v6.04 2022-02-07 WeKan ® release
+
+This release fixes the following bugs:
+
+- [Fixed Copy card to list does not work, by reverting clientside changes of PR 4333](https://github.com/wekan/wekan/commit/a5b376e6b5f9b171c39cd9341b8c2a4346fc3f5e).
+  Thanks to Meeques, PaulITsoft and xet7.
+- [Fixed Problem with selecting action in rule window](https://github.com/wekan/wekan/commit/dc7b97c1780849b04389696f0dac38e4477e28cf).
+  Thanks to Meeques and xet7.
+
+Thanks to above GitHub users for their contributions and translators for their translations.
+
+# v6.03 2022-02-07 WeKan ® release
+
+This release adds the following updates:
+
+- [Updated to Node.js v12.22.10](https://github.com/wekan/wekan/commit/cc5486797648b8098e50fa4f68cc4b588f41ab60).
+  Thanks to Node.js developers.
+
+Thanks to above GitHub users for their contributions and translators for their translations.
+
+# v6.02 2022-02-06 WeKan ® release
+
+This release adds the following updates:
+
+- [Updated dependencies](https://github.com/wekan/wekan/commit/f888b5cb23917c01cef7a84cf23314051ec6bfff).
+  Thanks to developers of dependencies.
+
+Thanks to above GitHub users for their contributions and translators for their translations.
+
 # v6.01 2022-02-06 WeKan ® release
 
 This release adds the following updates:
