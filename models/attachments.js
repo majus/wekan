@@ -1,16 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { FilesCollection } from 'meteor/ostrio:files';
-import fs from 'fs';
-import path from 'path';
-import { createBucket } from './lib/grid/createBucket';
-import { createOnAfterUpload } from './lib/fsHooks/createOnAfterUpload';
-import { createInterceptDownload } from './lib/fsHooks/createInterceptDownload';
-import { createOnAfterRemove } from './lib/fsHooks/createOnAfterRemove';
-
-let attachmentBucket;
-if (Meteor.isServer) {
-  attachmentBucket = createBucket('attachments');
-}
+import { GridFilesCollection } from 'meteor/majus:files-gridfs';
 
 const insertActivity = (fileObj, activityType) =>
   Activities.insert({
@@ -29,19 +18,11 @@ const insertActivity = (fileObj, activityType) =>
 
 // XXX Enforce a schema for the Attachments FilesCollection
 // see: https://github.com/VeliovGroup/Meteor-Files/wiki/Schema
-
-Attachments = new FilesCollection({
-  debug: false, // Change to `true` for debugging
+Attachments = new GridFilesCollection({
   collectionName: 'attachments',
+  debug: Meteor.isDevelopment,
   allowClientCode: true,
-  storagePath() {
-    if (process.env.WRITABLE_PATH) {
-      return path.join(process.env.WRITABLE_PATH, 'uploads', 'attachments');
-    }
-    return path.normalize(`assets/app/uploads/${this.collectionName}`);
-  },
-  onAfterUpload: function onAfterUpload(fileRef) {
-    createOnAfterUpload(attachmentBucket).call(this, fileRef);
+  onAfterUpload(fileRef) {
     // If the attachment doesn't have a source field
     // or its source is different than import
     if (!fileRef.meta.source || fileRef.meta.source !== 'import') {
@@ -49,9 +30,7 @@ Attachments = new FilesCollection({
       insertActivity(fileRef, 'addAttachment');
     }
   },
-  interceptDownload: createInterceptDownload(attachmentBucket),
-  onAfterRemove: function onAfterRemove(files) {
-    createOnAfterRemove(attachmentBucket).call(this, files);
+  onAfterRemove(files) {
     files.forEach(fileObj => {
       insertActivity(fileObj, 'deleteAttachment');
     });
@@ -84,12 +63,6 @@ if (Meteor.isServer) {
 
   Meteor.startup(() => {
     Attachments.collection._ensureIndex({ cardId: 1 });
-    const storagePath = Attachments.storagePath();
-    console.log("Meteor.startup check storagePath: ", storagePath);
-    if (!fs.existsSync(storagePath)) {
-      console.log("create storagePath because it doesn't exist: " + storagePath);
-      fs.mkdirSync(storagePath, { recursive: true });
-    }
   });
 }
 
