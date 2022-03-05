@@ -12,12 +12,12 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 ENV BUILD_DEPS="apt-utils libarchive-tools gnupg gosu wget curl bzip2 g++ build-essential git ca-certificates python3" \
     DEBUG=false \
-    NODE_VERSION=v12.22.10 \
-    METEOR_RELEASE=1.10.2 \
+    NODE_VERSION=v14.18.3 \
+    METEOR_RELEASE=2.6 \
     USE_EDGE=false \
-    METEOR_EDGE=1.5-beta.17 \
+    METEOR_EDGE=2.6 \
     NPM_VERSION=latest \
-    FIBERS_VERSION=4.0.1 \
+    FIBERS_VERSION=5.0.0 \
     ARCHITECTURE=linux-x64 \
     SRC_PATH=./ \
     WITH_API=true \
@@ -140,7 +140,8 @@ ENV BUILD_DEPS="apt-utils libarchive-tools gnupg gosu wget curl bzip2 g++ build-
     SAML_ATTRIBUTES="" \
     ORACLE_OIM_ENABLED=false \
     WAIT_SPINNER="" \
-    NODE_OPTIONS="--max_old_space_size=4096"
+    NODE_OPTIONS="--max_old_space_size=4096" \
+    METEOR_DISABLE_OPTIMISTIC_CACHING=1
 
 #---------------------------------------------------------------------
 # https://github.com/wekan/wekan/issues/3585#issuecomment-1021522132
