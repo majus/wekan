@@ -34,7 +34,6 @@ reactive-dict@1.3.0
 session@1.2.0
 tracker@1.2.0
 underscore@1.0.10
-arillo:flow-router-helpers
 audit-argument-checks@1.0.7
 kadira:blaze-layout
 kadira:dochead
@@ -129,11 +128,11 @@ aldeed:simple-schema
 accounts-password
 matb33:collection-hooks
 simple:json-routes
-kadira:flow-router
 spacebars
 useraccounts:core
 useraccounts:unstyled
-useraccounts:flow-routing
 service-configuration
 communitypackages:picker
 simple:rest-accounts-password
+ostrio:flow-router-extra
+useraccounts:flow-routing-extra

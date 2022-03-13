@@ -1,3 +1,5 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+
 Utils = {
   /** returns the current board id
    * <li> returns the current board id or the board id of the popup card if set

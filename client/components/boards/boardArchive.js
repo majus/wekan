@@ -1,3 +1,5 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+
 BlazeComponent.extendComponent({
   onCreated() {
     this.subscribe('archivedBoards');

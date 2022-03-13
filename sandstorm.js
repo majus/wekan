@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Picker } from 'meteor/communitypackages:picker';
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 // Sandstorm context is detected using the METEOR_SETTINGS environment variable
 // in the package definition.

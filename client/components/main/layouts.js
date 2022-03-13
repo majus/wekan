@@ -1,3 +1,4 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { TAPi18n } from '/i18n';
 import languages from '/i18n/languages';
 

@@ -1,3 +1,4 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import escapeForRegex from 'escape-string-regexp';
 import { TAPi18n } from '/i18n';
 import {

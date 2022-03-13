@@ -1,3 +1,4 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import moment from 'moment';
 import {
   ALLOWED_COLORS,

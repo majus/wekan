@@ -1,3 +1,4 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { TAPi18n } from '/i18n';
 
 const passwordField = AccountsTemplates.removeField('password');

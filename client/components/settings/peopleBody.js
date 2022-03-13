@@ -1,3 +1,5 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+
 const orgsPerPage = 25;
 const teamsPerPage = 25;
 const usersPerPage = 25;
