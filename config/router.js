@@ -358,11 +358,12 @@ FlowRouter.route('/admin-reports', {
   },
 });
 
-FlowRouter.notFound = {
+// Fallback: Not found
+FlowRouter.route('*', {
   action() {
     BlazeLayout.render('defaultLayout', { content: 'notFound' });
   },
-};
+});
 
 // We maintain a list of redirections to ensure that we don't break old URLs
 // when we change our routing scheme.
