@@ -47,6 +47,9 @@ Attachments = new FilesCollection({
       // Add activity about adding the attachment
       insertActivity(fileRef, 'addAttachment');
     }
+    this.collection.update(fileRef._id, {
+      $set: { 'meta.uploadedAt': new Date() },
+    });
   },
   interceptDownload: createInterceptDownload(attachmentBucket),
   onAfterRemove: function onAfterRemove(files) {

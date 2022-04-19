@@ -1126,3 +1126,11 @@ Migrations.add('add-card-details-show-lists', () => {
   );
 });
 
+Migrations.add('add-attachments-meta-uploaded-at', () => {
+  Attachments.update({ 'meta.uploadedAt': null }, {
+    $set: {
+      'meta.uploadedAt': new Date(),
+    },
+  }, { multi: true });
+});
+

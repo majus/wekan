@@ -20,8 +20,8 @@ template(name="attachmentsGalery")
     each attachments
       .attachment-item
         a.attachment-thumbnail.swipebox(href="{{link}}" title="{{name}}")
-          if isUploaded
-            if isImage
+          if meta.uploadedAt
+            if this.isImage
               img.attachment-thumbnail-img(src="{{link}}")
             else if($eq extension 'mp3')
                 video(width="100%" height="100%" controls="true")
