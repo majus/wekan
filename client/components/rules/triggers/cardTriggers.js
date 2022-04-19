@@ -1,4 +1,4 @@
-import { TAPi18n } from '/i18n';
+import { TAPi18n } from '/imports/i18n';
 
 BlazeComponent.extendComponent({
   onCreated() {

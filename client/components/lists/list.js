@@ -1,4 +1,4 @@
-import { TAPi18n } from '/i18n';
+import { TAPi18n } from '/imports/i18n';
 require('/client/lib/jquery-ui.js')
 
 const { calculateIndex } = Utils;

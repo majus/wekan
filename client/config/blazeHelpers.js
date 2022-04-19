@@ -1,5 +1,6 @@
 import moment from 'moment';
-import { TAPi18n } from '/i18n';
+import { Blaze } from 'meteor/blaze';
+import { Session } from 'meteor/session';
 
 Blaze.registerHelper('currentBoard', () => {
   const ret = Utils.getCurrentBoard();
@@ -38,10 +39,4 @@ Blaze.registerHelper('moment', (...args) => {
   args.pop(); // hash
   const [date, format] = args;
   return moment(date).format(format);
-});
-
-Blaze.registerHelper('_', (...args) => {
-  const { hash } = args.pop();
-  const [key] = args.splice(0, 1);
-  return TAPi18n.__(key, { ...hash, sprintf: args });
 });

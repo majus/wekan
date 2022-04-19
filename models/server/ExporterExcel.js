@@ -1,6 +1,6 @@
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import moment from 'moment';
-import { TAPi18n } from '/i18n';
+import { TAPi18n } from '/imports/i18n';
 import { createWorkbook } from './createWorkbook';
 
 // exporter maybe is broken since Gridfs introduced, add fs and path

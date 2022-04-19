@@ -1,13 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import { TAPi18n } from '/i18n';
+import { TAPi18n } from '/imports/i18n';
 import AccountSettings from '../models/accountSettings';
 import TableVisibilityModeSettings from '../models/tableVisibilityModeSettings';
 import Actions from '../models/actions';
 import Activities from '../models/activities';
 import Announcements from '../models/announcements';
-import Attachments from '../models/attachments';
-import Avatars from '../models/avatars';
 import Boards from '../models/boards';
 import CardComments from '../models/cardComments';
 import Cards from '../models/cards';

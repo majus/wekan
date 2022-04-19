@@ -1,6 +1,5 @@
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
-import { TAPi18n } from '/i18n';
-import languages from '/i18n/languages';
+import { TAPi18n } from '/imports/i18n';
 
 BlazeLayout.setRoot('body');
 
@@ -104,7 +103,7 @@ Template.userFormsLayout.helpers({
   },
 
   languages() {
-    return Object.values(languages)
+    return TAPi18n.getSupportedLanguages()
       .map(({ isoCode, name }) => ({ tag: isoCode, name }))
       .sort((a, b) => {
         if (a.name === b.name) {

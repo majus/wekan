@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
-import { TAPi18n } from '/i18n';
+import { TAPi18n } from '/imports/i18n';
 import { DatePicker } from '/client/lib/datepicker';
 import Cards from '/models/cards';
 import Boards from '/models/boards';

@@ -1,9 +1,7 @@
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import moment from 'moment';
 const Papa = require('papaparse');
-import { TAPi18n } from '/i18n';
-
-//const stringify = require('csv-stringify');
+import { TAPi18n } from '/imports/i18n';
 
 //const stringify = require('csv-stringify');
 

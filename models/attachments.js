@@ -67,8 +67,6 @@ Attachments = new FilesCollection({
   },
 });
 
-
-
 if (Meteor.isServer) {
   Attachments.allow({
     insert(userId, fileObj) {

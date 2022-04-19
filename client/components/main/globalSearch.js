@@ -1,4 +1,4 @@
-import { TAPi18n } from '/i18n';
+import { TAPi18n } from '/imports/i18n';
 import { CardSearchPagedComponent } from '../../lib/cardSearch';
 import Boards from '../../../models/boards';
 import { Query, QueryErrors } from '../../../config/query-classes';

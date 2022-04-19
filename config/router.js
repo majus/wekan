@@ -1,5 +1,5 @@
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
-import { TAPi18n } from '/i18n';
+import { TAPi18n } from '/imports/i18n';
 
 let previousPath;
 FlowRouter.triggers.exit([

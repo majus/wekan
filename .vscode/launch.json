@@ -34,6 +34,23 @@
       "name": "Chrome",
       "url": "http://localhost:4000",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Test: Node",
+        "runtimeExecutable": "meteor",
+        "runtimeArgs": [
+          "test",
+          "--inspect-brk=9229",
+          "--port=4040",
+          "--exclude-archs=web.browser.legacy,web.cordova",
+          "--driver-package=meteortesting:mocha",
+          "--settings=settings.json"
+        ],
+        "outputCapture": "std",
+        "port": 9229,
+        "timeout": 60000
     }
   ],
   "compounds": [
